@@ -10,10 +10,14 @@
     "@types/node": "^12.12.17",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/yup": "^0.26.26",
+    "antd": "^3.26.3",
+    "formik": "^2.0.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
