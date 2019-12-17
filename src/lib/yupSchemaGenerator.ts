@@ -1,5 +1,5 @@
-import * as yup from 'yup';
 import IYupValidation from '../types/IValidation';
+const yup = require('yup');
 
 export function createYupSchema(schema: any, config: any) {
 	const { id, validationType, validations = [] } = config;

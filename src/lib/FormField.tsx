@@ -4,23 +4,22 @@ import IFormSchema from '../types/IFormShema';
 import IFormFieldProps from '../types/IComponentProps';
 
 export default (
-	{ id, label, iconType, name, type, placeholder }: IFormSchema,
+	{ id, iconType, name, type, placeholder }: IFormSchema,
 	{ onChange, value, error }: IFormFieldProps
 ) => {
 	const renderError = error ? <strong>{error}</strong> : null;
+	console.log(value);
 	return (
 		<Form.Item>
-			<label>{label}</label>&nbsp;&nbsp;
 			<Input
-				prefix={<Icon type={iconType} />}
+				prefix={iconType ? <Icon type={iconType} /> : null}
 				name={name}
 				type={type}
 				placeholder={placeholder}
 				value={value}
 				onChange={onChange}
 			/>
-			<br />
-			{renderError}
+			{renderError && [ <br />, { renderError } ]}
 		</Form.Item>
 	);
 };

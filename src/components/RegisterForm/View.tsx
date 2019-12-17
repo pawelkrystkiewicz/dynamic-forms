@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { Form, Button, Checkbox } from 'antd';
 import './styles.css';
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
 	renderFormElements = (props: any) =>
 		formData.map((item, index) => {
 			const fieldMap: any = { text: FormField, number: FormField };
@@ -46,7 +46,7 @@ class LoginForm extends Component {
 
 		return (
 			<div className="form">
-				<h1>Login</h1>
+				<h1>Register</h1>
 				<Formik
 					initialValues={initialValues}
 					validationSchema={validateSchema}
@@ -59,20 +59,11 @@ class LoginForm extends Component {
 						<Form onSubmit={props.handleSubmit} className="login-form">
 							{this.renderFormElements(props)}
 							<Form.Item>
-								<div className="form--access-controls">
-									<Checkbox //onChange={(e) => updateState('remember', e.target.checked)}
-									>
-										Remember me
-									</Checkbox>
-									<a className="form--save-credentials" href="">
-										Forgot password
-									</a>
-								</div>
 								<div className="form-buttons">
 									<Button type="primary" htmlType="submit" className="login--form-button">
-										Log in
+										Register
 									</Button>
-									Or <a href="">register now!</a>
+									Already a member? <a href="/login">Login!</a>
 								</div>
 							</Form.Item>
 						</Form>
@@ -83,4 +74,4 @@ class LoginForm extends Component {
 	}
 }
 
-export default LoginForm;
+export default RegisterForm;

@@ -1,24 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Navigation from './components/Navigation/View';
+import routes from './routes';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<div className="App">
+				<header className="App-header">
+					<p>Dynamic forms example</p>
+					<Navigation />
+				</header>
+				<Switch>{routes.map((route) => <Route path={route.path} children={route.component} />)}</Switch>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
