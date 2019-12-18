@@ -14,7 +14,7 @@
 	},
 	{
 		"id": "password",
-		"type": "text",
+		"type": "password",
 		"validationType": "string",
 		"validations": [
 			{ "type": "required", "message": "Password is required" },

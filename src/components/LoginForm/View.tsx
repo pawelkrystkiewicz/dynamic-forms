@@ -10,10 +10,8 @@ import './styles.css';
 class LoginForm extends Component {
 	renderFormElements = (props: any) =>
 		formData.map((item, index) => {
-			const fieldMap: any = { text: FormField, number: FormField };
+			const fieldMap: any = { text: FormField, number: FormField, password: FormField };
 			const Component = fieldMap[item.type];
-
-			console.log(Component);
 
 			let error = props.errors.hasOwnProperty(item.id) && props.errors[item.id];
 
