@@ -1,29 +1,29 @@
 import { Form, Icon, Input } from 'antd';
 import React, { Component } from 'react';
-import IFormSchema from '../types/IFormShema';
-import IFormFieldProps from '../types/IComponentProps';
-
+import './style.css';
 class FormField extends Component<any> {
 	constructor(props: any) {
 		super(props);
 	}
 	render() {
 		const { error, value, iconType, type, placeholder, onChange, name } = this.props;
-		const renderError = error ? <strong>{error}</strong> : null;
+
+		const inputWarning = error ? <div className="form-field--warning">{error.charAt(0).toUpperCase()+error.substring(1)}</div> : null;
 
 		return (
-			<Form.Item>
-				<Input
-					prefix={iconType ? <Icon type={iconType} /> : null}
-					name={name}
-					type={type}
-					placeholder={placeholder}
-					value={value}
-					onChange={onChange}
-				/>
-				{error && <br />}
-				{renderError}
-			</Form.Item>
+			<React.Fragment>
+				<Form.Item>
+					<Input
+						prefix={iconType ? <Icon type={iconType} /> : null}
+						name={name}
+						type={type}
+						placeholder={placeholder}
+						value={value}
+						onChange={onChange}
+					/>
+				</Form.Item>
+				{inputWarning}
+			</React.Fragment>
 		);
 	}
 }

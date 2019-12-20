@@ -6,6 +6,7 @@ import { createYupSchema } from '../../lib/yupSchemaGenerator';
 import * as yup from 'yup';
 import { Form, Button, Checkbox } from 'antd';
 import './styles.css';
+import CodeDisplay from '../CodeDisplay/CodeDisplay.View';
 
 class LoginForm extends Component {
 	renderFormElements = (props: any) =>
@@ -43,8 +44,7 @@ class LoginForm extends Component {
 		const validateSchema = yup.object().shape(yepSchema);
 
 		return (
-			<div className="form">
-				<h1>Login</h1>
+			<div className="form--component">
 				<Formik
 					initialValues={initialValues}
 					validationSchema={validateSchema}
@@ -54,26 +54,17 @@ class LoginForm extends Component {
 					}}
 				>
 					{(props) => (
-						<Form onSubmit={props.handleSubmit} className="login-form">
-							{this.renderFormElements(props)}
-							<Form.Item>
-								<div className="form--access-controls">
-									<Checkbox //onChange={(e) => updateState('remember', e.target.checked)}
-									>
-										Remember me
-									</Checkbox>
-									<a className="form--save-credentials" href="">
-										Forgot password
-									</a>
-								</div>
-								<div className="form-buttons">
-									<Button type="primary" htmlType="submit" className="login--form-button">
+						<div className="form--elements-comparison">
+							<Form onSubmit={props.handleSubmit} className="form">
+								{this.renderFormElements(props)}
+								<Form.Item>
+									<Button type="primary" htmlType="submit" block>
 										Log in
 									</Button>
-									Or <a href="">register now!</a>
-								</div>
-							</Form.Item>
-						</Form>
+								</Form.Item>
+							</Form>
+							<CodeDisplay values={props.values} />
+						</div>
 					)}
 				</Formik>
 			</div>

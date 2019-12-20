@@ -1,0 +1,10 @@
+.form-field--warning {
+	margin-top: -20px;
+	margin-bottom: 15px;
+	padding: 5px;
+	font-size: 12px;
+	color: red;
+	border: 1px solid red;
+	border-radius: 4px;
+	background: rgba(255, 0, 0, 0.15);
+}

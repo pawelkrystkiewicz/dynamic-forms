@@ -18,25 +18,15 @@
 		"type": "text",
 		"validationType": "string",
 		"validations": [
-			{ "type": "required", "message": "this field is required" },
+			{ "type": "required", "message": "This field is required" },
 			{ "type": "min", "value": 5, "message": "Email cannot be less than 5 characters" },
 			{ "type": "max", "value": 50, "message": "Email cannot be more than 50 characters" },
-			{ "type": "email", "message": "please enter a valid email" }
-		]
-	},
-	{
-		"id": "phoneNumber",
-		"type": "text",
-		"validationType": "string",
-		"validations": [
-			{ "type": "required", "message": "Phone number is required" },
-			{ "type": "min", "value": 7, "message": "Phone number cannot be less than 7 characters" },
-			{ "type": "max", "value": 50, "message": "Phone number cannot be more than 50 characters" }
+			{ "type": "email", "message": "Please enter a valid email" }
 		]
 	},
 	{
 		"id": "password",
-		"type": "text",
+		"type": "password",
 		"validationType": "string",
 		"validations": [
 			{ "type": "required", "message": "Password is required" },
@@ -45,16 +35,14 @@
 		]
 	},
 	{
-		"id": "age",
-		"placeholder": "18",
-		"type": "number",
-		"validationType": "number",
-		"required": true,
-
+		"id": "phone number",
+		"type": "text",
+		"placeholder": "Phone number",
+		"validationType": "string",
 		"validations": [
-			{ "type": "required", "message": "This field is required" },
-			{ "type": "min", "value": 0, "message": "Benjamin Button is that you?" },
-			{ "type": "max", "value": 50, "message": "Ok boomer" }
+			{ "type": "required", "message": "Phone number is required" },
+			{ "type": "min", "value": 7, "message": "Phone number cannot be less than 7 characters" },
+			{ "type": "max", "value": 50, "message": "Phone number cannot be more than 50 characters" }
 		]
 	}
 ]

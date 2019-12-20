@@ -5,12 +5,12 @@ import formData from './schema.json';
 import { createYupSchema } from '../../lib/yupSchemaGenerator';
 import * as yup from 'yup';
 import { Form, Button, Checkbox } from 'antd';
-import './styles.css';
+import CodeDisplayView from '../CodeDisplay/CodeDisplay.View';
 
 class RegisterForm extends Component {
 	renderFormElements = (props: any) =>
 		formData.map((item, index) => {
-			const fieldMap: any = { text: FormField, number: FormField };
+			const fieldMap: any = { text: FormField, number: FormField, password: FormField };
 			const Component = fieldMap[item.type];
 
 			console.log(Component);
@@ -45,8 +45,7 @@ class RegisterForm extends Component {
 		const validateSchema = yup.object().shape(yepSchema);
 
 		return (
-			<div className="form">
-				<h1>Register</h1>
+			<div className="form--component">
 				<Formik
 					initialValues={initialValues}
 					validationSchema={validateSchema}
@@ -56,17 +55,17 @@ class RegisterForm extends Component {
 					}}
 				>
 					{(props) => (
-						<Form onSubmit={props.handleSubmit} className="login-form">
-							{this.renderFormElements(props)}
-							<Form.Item>
-								<div className="form-buttons">
-									<Button type="primary" htmlType="submit" className="login--form-button">
+						<div className="form--elements-comparison">
+							<Form onSubmit={props.handleSubmit} className="form">
+								{this.renderFormElements(props)}
+								<Form.Item>
+									<Button type="primary" htmlType="submit" block>
 										Register
 									</Button>
-									Already a member? <a href="/login">Login!</a>
-								</div>
-							</Form.Item>
-						</Form>
+								</Form.Item>
+							</Form>
+							<CodeDisplayView values={props.values} />
+						</div>
 					)}
 				</Formik>
 			</div>

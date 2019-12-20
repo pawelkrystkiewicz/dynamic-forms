@@ -1,8 +1,10 @@
 import React from 'react';
 import LoginPage from '../pages/login';
 import RegisterForm from '../pages/register';
+import { IRoute } from '../types/IRoute';
 
-export default [
+const routes: IRoute[] = [
+
 	{
 		path: '/login',
 		title: 'Login',
@@ -14,3 +16,5 @@ export default [
 		component: <RegisterForm />
 	}
 ];
+
+export default routes;
